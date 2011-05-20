@@ -14,6 +14,10 @@ module SpreeBitcoinCheckout
       Billing::BitcoinCheckout.register
     end
 
+    initializer "static assets" do |app|
+      app.middleware.use ::ActionDispatch::Static, "#{root}/public"
+    end
+
     config.to_prepare &method(:activate).to_proc
   end
 end
