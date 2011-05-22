@@ -1,5 +1,5 @@
 class Billing::BitcoinCheckout < BillingIntegration
-  preference :account, :string
-  preference :api_key, :string
+  preference :user, :string
+  preference :password, :string
   preference :api_url, :string
 end

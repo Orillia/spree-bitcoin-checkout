@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_bitcoin_checkout'
-  s.version     = '0.1'
+  s.version     = '0.1.1'
   s.summary     = "Automatically integrate bitcoin-central.net's API"
   s.description = 'Leverages the invoicing API in order to seamlessly accept bitcoin denominated payments'
   s.required_ruby_version = '>= 1.8.7'
@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-#  s.add_dependency('spree_core', '>= 0.60.0')
+  s.add_dependency('spree_core', '>= 0.60.0')
 end

@@ -27,7 +27,7 @@ CheckoutController.class_eval do
     user = order.payments.first.payment_method.preferred_user
     password = order.payments.first.payment_method.preferred_password
 
-    uri = URI.parse("https://bitcoin-central.net/invoices")
+    uri = URI.parse(order.payments.first.payment_method.preferred_api_url)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
