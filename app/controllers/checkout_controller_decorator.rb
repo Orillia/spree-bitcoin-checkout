@@ -11,7 +11,7 @@ CheckoutController.class_eval do
   alias_method_chain :update, :redirect_to_bitcoin_sci
 
   def should_redirect_to_bitcoin_sci?
-    params[:state] == "payment" &&
+    params["state"] == "payment" &&
       (PaymentMethod.find(params[:order][:payments_attributes].first[:payment_method_id]).type.to_s =~ /BitcoinCheckout/)
   end
 
