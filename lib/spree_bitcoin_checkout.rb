@@ -12,6 +12,10 @@ module SpreeBitcoinCheckout
       end
 
       Billing::BitcoinCheckout.register
+      
+      CheckoutController.class_eval do
+        include Spree::BitcoinCheckout
+      end
     end
 
     initializer "static assets" do |app|
